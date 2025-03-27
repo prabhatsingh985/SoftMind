@@ -1,8 +1,10 @@
 import './App.css';
 import ApplyForm from './pages/ApplyForm';
-import Navbar from './pages/Navbar';
+import Navbar from './components/Navbar';
 import InternshipDetails from './pages/InternshipDetails';
 import InternshipTraining from './pages/InternshipTraining';
+import HeroSection from './pages/HeroSection';
+import Homepage from './pages/Homepage';
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
       {/* <InternshipTraining/> */}
       {/* <InternshipDetails/> */}
       {/* <ApplyForm/> */}
-      <Navbar/>
+      {/* <Navbar/>
+      <HeroSection/> */}
+      <Homepage/>
 
     </div>
   );
