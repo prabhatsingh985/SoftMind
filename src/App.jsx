@@ -1,18 +1,23 @@
 import './App.css';
 import ApplyForm from './pages/ApplyForm';
-import Navbar from './pages/Navbar';
+import Navbar from './components/Navbar'; // Corrected import path
 import InternshipDetails from './pages/InternshipDetails';
 import InternshipTraining from './pages/InternshipTraining';
+import Career from './pages/Career';
+import { BrowserRouter as Router } from 'react-router-dom'; // Added `Router`
+import { Routes, Route } from 'react-router-dom'; // Added `Route`
 
 function App() {
   return (
-    <div>
-      {/* <InternshipTraining/> */}
-      {/* <InternshipDetails/> */}
-      {/* <ApplyForm/> */}
-      <Navbar/>
-
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/apply" element={<ApplyForm />} />
+        <Route path="/details" element={<InternshipDetails />} />
+        <Route path="/training" element={<InternshipTraining />} />
+        <Route path="/career" element={<Career />} />
+      </Routes>
+    </>
   );
 }
 

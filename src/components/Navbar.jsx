@@ -38,7 +38,7 @@ export default function Navbar() {
             <Link to="/contact">Blogs</Link>
           </li>
           <li>
-            <Link to="/contact">Career</Link>
+            <Link to="/career">Career</Link>
           </li>
           <li>
             <Link to="/contact">About us</Link>
