@@ -1,14 +1,16 @@
 import './App.css';
 import ApplyForm from './pages/ApplyForm';
-// import InternshipDetails from './pages/InternshipDetails';
-// import InternshipTraining from './pages/InternshipTraining';
+import Navbar from './pages/Navbar';
+import InternshipDetails from './pages/InternshipDetails';
+import InternshipTraining from './pages/InternshipTraining';
 
 function App() {
   return (
     <div>
       {/* <InternshipTraining/> */}
       {/* <InternshipDetails/> */}
-      <ApplyForm/>
+      {/* <ApplyForm/> */}
+      <Navbar/>
 
     </div>
   );
