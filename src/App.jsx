@@ -1,10 +1,7 @@
 import './App.css';
-import ApplyForm from './pages/ApplyForm';
-import Navbar from './components/Navbar';
-import InternshipDetails from './pages/InternshipDetails';
-import InternshipTraining from './pages/InternshipTraining';
-import HeroSection from './pages/HeroSection';
-import Homepage from './pages/Homepage';
+import Footer from './components/Footer';
+import Blogs from './pages/Blogs';
+
 
 function App() {
   return (
@@ -12,10 +9,12 @@ function App() {
       {/* <InternshipTraining/> */}
       {/* <InternshipDetails/> */}
       {/* <ApplyForm/> */}
-      {/* <Navbar/>
-      <HeroSection/> */}
-      <Homepage/>
-
+      {/* <Navbar/> */}
+      {/* <HeroSection/> */}
+      {/* <Homepage/> */}
+      <Blogs/>
+       <Footer/>
+     
     </div>
   );
 }
