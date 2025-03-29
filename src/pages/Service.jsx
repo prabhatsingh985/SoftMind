@@ -88,27 +88,45 @@ const ServicesPage = () => {
       </section>
 
       {/* Service Details */}
-      <section className="px-20 py-16 space-y-16">
-        {services.map((service, index) => (
-          <div key={index} className="flex items-center space-x-10">
-            <div className={`w-1/2 ${index % 2 === 0 ? "order-1" : "order-2"}`}>
-              <img
-                src={service.detailImage}
-                alt={service.title}
-                className="w-80 h-80 rounded-full border-8 border-purple-500 
-             shadow-2xl drop-shadow-[20px_0px_20px_rgba(0,0,0,0.4)] object-cover"
-              />
-            </div>
-            <div className="w-1/2">
-              <h3 className="text-3xl font-bold">{service.title}</h3>
-              <p className="text-gray-600 mt-3">{service.description}</p>
-              <button className="mt-5 bg-purple-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-600">
-                Get Started
-              </button>
-            </div>
-          </div>
-        ))}
-      </section>
+{/* Service Details */}
+<section className="py-16">
+  <div className="max-w-5xl mx-auto space-y-16 px-4">
+    {services.map((service, index) => (
+      <div key={index} className="flex flex-col md:flex-row items-center md:relative">
+        {/* Image Container with negative margin to overlap text container */}
+        <div
+          className={`w-full md:w-1/2 ${
+            index % 2 === 0
+              ? "md:order-1 md:mr-[-50px]"
+              : "md:order-2 md:ml-[-50px]"
+          }`}
+        >
+          <img
+            src={service.detailImage}
+            alt={service.title}
+            className="w-80 h-80 rounded-full border-8 border-purple-500 shadow-2xl drop-shadow-[20px_0px_20px_rgba(0,0,0,0.4)] object-cover mx-auto"
+          />
+        </div>
+        {/* Text Container with gradient background */}
+        <div
+          className={`w-full md:w-1/2 mt-6 md:mt-0 p-8 rounded-lg shadow-md relative z-10 ${
+            index % 2 === 0
+              ? "md:order-2 bg-gradient-to-r from-purple-500 to-white"
+              : "md:order-1 bg-gradient-to-l from-purple-500 to-white"
+          }`}
+        >
+          <h3 className="text-3xl font-bold">{service.title}</h3>
+          <p className="text-gray-600 mt-3">{service.description}</p>
+          <button className="mt-5 bg-purple-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-600">
+            Get Started
+          </button>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-10 text-center">
