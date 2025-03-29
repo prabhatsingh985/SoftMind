@@ -18,6 +18,7 @@ function App() {
         <Route path="/training" element={<InternshipTraining />} />
         <Route path="/career" element={<Career />} />
         <Route path="/service" element={<Service />} />
+        <Route path="/apply" element={<ApplyForm />} />
       </Routes>
     </>
   );
