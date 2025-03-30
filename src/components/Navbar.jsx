@@ -32,16 +32,19 @@ export default function Navbar() {
             <Link to="/service">Services</Link>
           </li>
           <li>
-            <Link to="/contact">Internships & Training</Link>
+            <Link to="/training">Internships & Training</Link>
           </li>
           <li>
-            <Link to="/contact">Blogs</Link>
+            <Link to="/blogs">Blogs</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
           </li>
           <li>
             <Link to="/career">Career</Link>
           </li>
           <li>
-            <Link to="/contact">About us</Link>
+            <Link to="/about">About us</Link>
           </li>
         </ul>
       </div>
