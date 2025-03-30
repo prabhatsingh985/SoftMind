@@ -9,21 +9,20 @@ import { BrowserRouter as Router } from 'react-router-dom'; // Added `Router`
 import { Routes, Route } from 'react-router-dom'; // Added `Route`
 import Insight from './pages/Insight';
 import ScalableAWSPage from './pages/Insight2';
-import AboutUs from './pages/AboutUs';
-import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
     <>
-      <Navbar />
+    <Blogs></Blogs>
+    <Footer></Footer>
+
+      {/* <Navbar />
       <Routes>
         <Route path="/insights" element={<Insight/>} />
         <Route path="/details" element={<InternshipDetails />} />
         <Route path="/training" element={<InternshipTraining />} />
         <Route path="/career" element={<Career />} />
         <Route path="/service" element={<Service />} />
-        <Route path ="/about"  element={<AboutUs />}/>
-        <Route path="/contact" element={<ContactUs />} />
       </Routes>
     </>
   );
