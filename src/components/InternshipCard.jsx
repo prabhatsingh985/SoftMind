@@ -1,5 +1,4 @@
 import React from "react";
-import { FaMapMarkerAlt, FaCalendarAlt, FaBriefcase } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const InternshipSection = () => {
@@ -35,13 +34,7 @@ const InternshipSection = () => {
         {internships.map((internship, index) => (
           <InternshipCard
             key={index}
-            title={internship.title}
-            description={internship.description}
-            location={internship.location}
-            duration={internship.duration}
-            type={internship.type}
-            bgColor={internship.bgColor}
-            onApply={handleApplyClick} // Pass function as prop
+            internship={internship}
           />
         ))}
       </div>
@@ -49,40 +42,33 @@ const InternshipSection = () => {
   );
 };
 
-const InternshipCard = ({ title, description, location, duration, type, bgColor, onApply }) => {
+const InternshipCard = ({ internship }) => {
   return (
-    <div className={`rounded-[20px] p-6 w-[300px] shadow-lg ${bgColor}`}>
-      {/* Icon */}
-      <div className="w-14 h-14 bg-white bg-opacity-30 rounded-full flex items-center justify-center mb-4">
-        <FaBriefcase className="text-black text-2xl" />
+    <div className="internship-card bg-white shadow-lg rounded-lg p-6 flex flex-col space-y-4 border border-gray-200">
+      <div className="icon bg-pink-100 p-4 rounded-full shadow self-center">
+        <i className="fas fa-briefcase text-pink-500 text-2xl"></i>
       </div>
-
-      {/* Title & Description */}
-      <h2 className="text-black font-bold text-xl">{title}</h2>
-      <p className="text-gray-700 text-sm">{description}</p>
-
-      {/* Details */}
-      <div className="mt-4 space-y-2 text-black">
-        <p className="flex items-center gap-2">
-          <FaMapMarkerAlt /> {location}
+      <h3 className="text-lg font-semibold text-gray-900 text-center">{internship.title}</h3>
+      <p className="text-sm text-gray-600 text-center">{internship.description}</p>
+      <div className="details text-sm text-gray-700 space-y-1 text-center">
+        <p>
+          <i className="fas fa-map-marker-alt mr-2"></i>
+          {internship.location}
         </p>
-        <p className="flex items-center gap-2">
-          <FaCalendarAlt /> {duration}
+        <p>
+          <i className="fas fa-calendar-alt mr-2"></i>
+          {internship.duration}
         </p>
-        <p className="flex items-center gap-2">
-          <FaBriefcase /> {type}
+        <p>
+          <i className="fas fa-briefcase mr-2"></i>
+          {internship.type}
         </p>
       </div>
-
-      {/* Buttons */}
-      <div className="mt-6 flex flex-col gap-2">
-        <button className="bg-white text-black font-bold w-full py-2 rounded-full shadow-md transition duration-300 ease-in-out hover:bg-gray-300 hover:shadow-lg">
+      <div className="actions flex flex-col w-full space-y-2">
+        <button className="bg-pink-500 text-white py-2 rounded-lg shadow hover:bg-pink-600">
           View Details
         </button>
-        <button
-          onClick={onApply}
-          className="bg-black text-white font-bold w-full py-2 rounded-full transition duration-300 ease-in-out hover:bg-gray-800 hover:shadow-lg flex justify-center items-center gap-2"
-        >
+        <button className="bg-gray-800 text-white py-2 rounded-lg hover:bg-gray-900">
           Apply →
         </button>
       </div>
@@ -90,4 +76,4 @@ const InternshipCard = ({ title, description, location, duration, type, bgColor,
   );
 };
 
-export default InternshipSection;
+export default InternshipCard;

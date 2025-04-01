@@ -11,32 +11,39 @@ const AboutUs = () => {
       <section className="py-16 px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Left Content */}
-          <div>
-            <h2 className="text-xl md:text-2xl font-bold text-gray-700">
+          <div className="px-4 md:px-0">
+            <h2 className="text-lg md:text-2xl font-bold text-gray-700">
               We are Software Development Company.
             </h2>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-purple-700 leading-tight mt-4">
+            <h1
+              className="text-3xl md:text-6xl font-extrabold leading-tight mt-4"
+              style={{
+                background: "linear-gradient(180deg, #8B37F8 0%, #7061F4 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
               We set out to build <br /> the best products for you
             </h1>
-            <div className="mt-6">
+            <div className="mt-6 overflow-hidden">
               <img
                 src={teamwork}
                 alt="Teamwork"
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-110"
               />
             </div>
           </div>
           {/* Right Content */}
-          <div className="order-first md:order-none mt-10 md:mt-20">
-            <p className="text-lg md:text-xl font-bold text-gray-600">
+          <div className="order-first md:order-none mt-10 md:mt-33 mb-0.5 flex flex-col justify-center px-4 md:px-0">
+            <p className="text-base md:text-xl font-semibold text-gray-600 relative top-6 md:top-4">
               We are passionate about creating innovative software solutions that empower businesses 
               to reach their full potential.
             </p>
-            <div className="mt-10 md:mt-20">
+            <div className="mt-6 md:mt-8 overflow-hidden">
               <img
                 src={success}
                 alt="Success"
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-110"
               />
             </div>
           </div>
@@ -44,17 +51,17 @@ const AboutUs = () => {
       </section>
 
       {/* About Section */}
-      <section className="flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-10 gap-6">
+      <section className="flex flex-col md:flex-row items-center justify-center py-16 px-4 md:px-10 gap-6">
         {/* Left Content */}
         <span className="md:w-1/2">
           <div className="flex items-center justify-center gap-2">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-purple-700">About us</h2>
-            <img src="/src/assets/Vector 15.png" alt="Arrow" className="w-8 md:w-10 h-8 md:h-10 mt-4" />
+            <h2 className="text-3xl md:text-6xl font-extrabold text-purple-700">About us</h2>
+            <img src="/src/assets/Vector 15.png" alt="Arrow" className="w-6 md:w-10 h-6 md:h-10 mt-4" />
           </div>
         </span>
         {/* Right Content */}
         <div className="md:w-1/2">
-          <p className="m-6 md:m-10 relative top-4 md:top-10 text-lg md:text-2xl font-bold text-gray-700">
+          <p className="m-4 md:m-10 relative top-2 md:top-10 text-base md:text-2xl font-bold text-gray-700">
             Our mission is simple: to craft software<br /> that makes a difference.
             Whether you're a startup<br /> looking for a robust app to disrupt the
             market, or an established enterprise <br />needing to streamline operations,
@@ -65,21 +72,25 @@ const AboutUs = () => {
       </section>
 
       {/* Quote Section */}
-      <section className="flex flex-col md:flex-row items-center justify-between py-16 px-6 md:px-10 gap-10">
+      <section className="flex flex-col md:flex-row items-center justify-between py-16 px-4 md:px-10 gap-10">
         {/* Left Quote */}
         <div className="md:w-1/2 order-last md:order-none">
-          <blockquote className="italic text-2xl md:text-4xl font-extrabold text-gray-700 border-l-4 border-purple-600 pl-4">
+          <blockquote className="italic text-xl md:text-4xl font-extrabold text-gray-700 border-l-4 border-purple-600 pl-4">
             "Individually, we are skilled professionals. Together, <br/>we are a powerhouse of innovation and creativity."
           </blockquote>
         </div>
         {/* Right Image */}
-        <div className="md:w-1/2 flex justify-center">
-          <img src={quote} alt="quote" className="w-full max-w-sm md:max-w-md rounded-lg shadow-lg" />
+        <div className="md:w-1/2 flex justify-center overflow-hidden">
+          <img 
+            src={quote} 
+            alt="quote" 
+            className="w-full max-w-xs md:max-w-md rounded-lg shadow-lg transition-transform duration-300 hover:scale-110" 
+          />
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="bg-purple-700 text-white py-6 flex flex-col md:flex-row justify-between px-6 md:px-10 text-lg md:text-2xl font-bold gap-4 md:gap-0">
+      <section className="bg-purple-700 text-white py-6 flex flex-col md:flex-row justify-between px-4 md:px-10 text-base md:text-2xl font-bold gap-4 md:gap-0">
         <span className="flex items-center gap-2">
           ⭐ Creative people
         </span>
@@ -112,16 +123,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-purple-700 text-white text-center py-8">
-        <div className="flex justify-center gap-6 text-xl md:text-2xl">
-          <a href="#"><FaLinkedinIn /></a>
-          <a href="#"><FaFacebookF /></a>
-          <a href="#"><FaYoutube /></a>
-          <a href="#"><FaInstagram /></a>
-        </div>
-        <p className="mt-4 text-xs md:text-sm">© 2024 Softmind Technologies. All Rights Reserved.</p>
-      </footer>
+     
     </div>
   );
 };

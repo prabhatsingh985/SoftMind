@@ -84,15 +84,7 @@ const ServicesPage = () => {
         ))}
       </section>
 
-      <footer className="bg-gray-900 text-white py-4 sm:py-6 md:py-8 text-center">
-        <div className="text-sm sm:text-base md:text-lg font-bold">Softmind</div>
-        <p className="text-xs sm:text-sm md:text-base text-gray-400 mt-2">&copy; 2025 Softmind. All Rights Reserved.</p>
-        <div className="flex justify-center space-x-2 sm:space-x-3 md:space-x-4 mt-4">
-          <a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm md:text-base">Facebook</a>
-          <a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm md:text-base">Twitter</a>
-          <a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm md:text-base">LinkedIn</a>
-        </div>
-      </footer>
+     
     </div>
   );
 };

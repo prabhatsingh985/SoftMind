@@ -12,12 +12,13 @@ const InternshipTraining = () => {
       <InternshipSection />
 
       {/* Internship Offers Section */}
+      {/* Ensure unique data is passed to InternshipOffers */}
       <InternshipOffers />
 
       {/* Internship Certificate Section */}
       <InternshipCertificate />
-      <InternshipDetails/>
-      <ApplyForm></ApplyForm>
+      <InternshipDetails />
+      <ApplyForm />
     </div>
   );
 };

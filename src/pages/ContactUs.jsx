@@ -1,20 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
+import Typical from "react-typical"; // Import react-typical for typing animation
 import logo from "../assets/logo.png";
 import map from "../assets/map.jpg";
 
 const ContactUs = () => {
+  const [hideCursor, setHideCursor] = useState(false); // State to hide the cursor
+
   return (
     <div className="bg-white font-sans">
       {/* Hero Section */}
       <div className="relative h-[300px] flex flex-col items-center justify-center bg-white text-black text-center px-4">
         <h2 className="m-5 relative z-10 text-3xl md:text-5xl font-extrabold text-purple-700">
-          Contact us
+          {!hideCursor ? (
+            <Typical
+              steps={["Contact us", 2000]} // Typing animation for "Contact us"
+              loop={1}
+              wrapper="span"
+              onComplete={() => setHideCursor(true)} // Hide cursor after typing completes
+            />
+          ) : (
+            "Contact us"
+          )}
         </h2>
         <h1 className="relative z-10 text-4xl md:text-6xl text-black font-extrabold">
-          Get in touch with our Team
+          {!hideCursor ? (
+            <Typical
+              steps={["Get in touch with our Team", 3000]} // Typing animation for "Get in touch with our Team"
+              loop={1}
+              wrapper="span"
+              onComplete={() => setHideCursor(true)} // Hide cursor after typing completes
+            />
+          ) : (
+            "Get in touch with our Team"
+          )}
         </h1>
         <p className="relative z-10 text-lg md:text-2xl">
-          Our team will guide you better
+          {!hideCursor ? (
+            <Typical
+              steps={["Our team will guide you better", 3000]} // Typing animation for "Our team will guide you better"
+              loop={1}
+              wrapper="span"
+              onComplete={() => setHideCursor(true)} // Hide cursor after typing completes
+            />
+          ) : (
+            "Our team will guide you better"
+          )}
         </p>
       </div>
       {/* Map Section */}
@@ -22,7 +52,7 @@ const ContactUs = () => {
         <img
           src={map}
           alt="Map"
-          className="w-full h-[300px] md:h-screen object-cover"
+          className="w-full h-[300px] md:h-screen object-cover transition-transform duration-300 hover:scale-105"
         />
       </div>
 
@@ -43,43 +73,43 @@ const ContactUs = () => {
             <h1 className="text-2xl md:text-4xl font-semibold">
               Contact Information
             </h1>
-            <form className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <form className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
               <input
                 type="text"
                 placeholder="First Name"
-                className="p-2 rounded-lg border border-gray-300"
+                className="p-2 rounded-lg border border-gray-300 transition-transform duration-300 hover:scale-105 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-700"
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                className="p-2 rounded-lg border border-gray-300"
+                className="p-2 rounded-lg border border-gray-300 transition-transform duration-300 hover:scale-105 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-700"
               />
               <input
                 type="email"
                 placeholder="Your Email ID"
-                className="p-2 rounded-lg border border-gray-300"
+                className="p-2 rounded-lg border border-gray-300 transition-transform duration-300 hover:scale-105 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-700"
               />
               <input
                 type="text"
                 placeholder="Phone Number"
-                className="p-2 rounded-lg border border-gray-300"
+                className="p-2 rounded-lg border border-gray-300 transition-transform duration-300 hover:scale-105 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-700"
               />
               <input
                 type="text"
                 placeholder="Tell Us"
-                className="col-span-1 md:col-span-2 p-2 rounded-lg border border-gray-300"
+                className="col-span-1 md:col-span-2 p-2 rounded-lg border border-gray-300 transition-transform duration-300 hover:scale-105 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-700"
               />
               <h2 className="text-lg md:text-2xl font-semibold col-span-1 md:col-span-2">
                 What can we help you with?
               </h2>
               <textarea
                 placeholder="Your Message"
-                className="col-span-1 md:col-span-2 p-2 rounded-lg border border-gray-300"
+                className="col-span-1 md:col-span-2 p-2 rounded-lg border border-gray-300 transition-transform duration-300 hover:scale-105 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-700"
                 rows="4"
               ></textarea>
               <button
                 type="submit"
-                className="col-span-1 md:col-span-2 bg-black text-white px-4 py-2 rounded-lg"
+                className="col-span-1 md:col-span-2 bg-black text-white px-4 py-2 rounded-lg transition-all duration-300 hover:bg-purple-700 hover:shadow-lg hover:scale-105"
               >
                 Submit
               </button>
@@ -88,24 +118,7 @@ const ContactUs = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-10 text-center mt-10">
-        <div className="text-lg font-bold">Softmind</div>
-        <p className="text-gray-400 mt-2 text-sm md:text-base">
-          &copy; 2025 Softmind Technologies. All Rights Reserved.
-        </p>
-        <div className="flex justify-center space-x-4 mt-4">
-          <a href="#" className="text-gray-400 hover:text-white text-sm md:text-base">
-            Facebook
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white text-sm md:text-base">
-            Twitter
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white text-sm md:text-base">
-            LinkedIn
-          </a>
-        </div>
-      </footer>
+      
     </div>
   );
 };
